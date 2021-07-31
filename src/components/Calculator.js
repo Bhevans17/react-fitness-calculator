@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import Select from "react-select";
-import EmailModal from "./EmailModal";
 
 const options = [
   { value: "139.7", label: "4ft 7in" },
@@ -156,56 +155,56 @@ class Calculator extends React.Component {
   render() {
     return (
       <Form>
-        <div className='container-fluid'>
-          <div className='row py-5'>
-            <div className='col-12 col-md-4 py-2 border'>
+        <div className="container-fluid">
+          <div className="row py-5">
+            <div className="col-12 col-md-4 py-2 border">
               <FormGroup>
-                <Label for='height'>Height</Label>
+                <Label for="height">Height</Label>
                 <Select
-                  id='height'
-                  name='height'
+                  id="height"
+                  name="height"
                   options={options}
                   onChange={this.handleHeight}
                   defaultValue={{ label: "Select Height", value: 0 }}
                 />
               </FormGroup>
             </div>
-            <div className='col-12 col-md-4 py-2 border'>
+            <div className="col-12 col-md-4 py-2 border">
               <FormGroup>
-                <Label for='age'>Age</Label>
+                <Label for="age">Age</Label>
                 <Input
                   value={this.state.age}
                   onChange={this.handleAge}
-                  type='text'
-                  name='age'
-                  id='age'
-                  maxLength='2'
+                  type="text"
+                  name="age"
+                  id="age"
+                  maxLength="2"
                 />
               </FormGroup>
             </div>
-            <div className='col-12 col-md-4 py-2 border'>
+            <div className="col-12 col-md-4 py-2 border">
               <FormGroup>
-                <Label for='weight'>Weight</Label>
+                <Label for="weight">Weight</Label>
                 <Input
                   value={this.state.weight}
                   onChange={this.handleWeight}
-                  type='weight'
-                  name='weight'
-                  id='weight'
-                  placeholder='lbs'
-                  maxLength='3'
+                  type="weight"
+                  name="weight"
+                  id="weight"
+                  placeholder="lbs"
+                  maxLength="3"
                 />
               </FormGroup>
             </div>
-            <div className='col-12 col-md-4 d-flex justify-content-center py-2 border'>
-              <FormGroup tag='fieldset'>
+            <div className="col-12 col-md-4 d-flex justify-content-center py-2 border">
+              <FormGroup tag="fieldset">
                 <legend>Gender</legend>
                 <FormGroup check>
                   <Label check>
                     <Input
-                      type='radio'
-                      name='male'
-                      value='male'
+                      type="radio"
+                      name="male"
+                      value="male"
                       checked={this.state.selectedGender === "male"}
                       onChange={this.handleGender}
                     />
@@ -215,9 +214,9 @@ class Calculator extends React.Component {
                 <FormGroup check>
                   <Label check>
                     <Input
-                      type='radio'
-                      name='female'
-                      value='female'
+                      type="radio"
+                      name="female"
+                      value="female"
                       checked={this.state.selectedGender === "female"}
                       onChange={this.handleGender}
                     />
@@ -226,33 +225,26 @@ class Calculator extends React.Component {
                 </FormGroup>
               </FormGroup>
             </div>
-            <div className='col-12 col-md-4 py-2 border'>
+            <div className="col-12 col-md-4 py-2 border">
               <FormGroup>
-                <Label className='text-secondary'>
+                <Label className="text-secondary">
                   (Based on Revised Harris-Benedict Equation)
                 </Label>
                 <Button
-                  className='btn btn-block btn-success mt-2'
+                  className="btn btn-block btn-success mt-2"
                   onClick={this.calculateWeight}
                 >
                   Calculate
                 </Button>
-                {/*
-                <EmailModal
-                  buttonLabel='Calculate'
-                  childClick={this.calculateWeight}
-                  calories={this.state.calorieIntake}
-                />
-                */}
                 <Button
-                  className='btn btn-block btn-secondary mt-2'
+                  className="btn btn-block btn-secondary mt-2"
                   onClick={this.clearValues}
                 >
                   Clear
                 </Button>
               </FormGroup>
             </div>
-            <div className='col-12 col-md-4 py-2 border'>
+            <div className="col-12 col-md-4 py-2 border">
               <FormGroup>
                 <h4>Calories: {this.state.calorieIntake}</h4>
                 <h4>Proteins: {this.state.proteinIntake}</h4>
